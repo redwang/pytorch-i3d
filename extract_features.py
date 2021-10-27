@@ -32,7 +32,7 @@ from pytorch_i3d import InceptionI3d
 from charades_dataset_full import Charades as Dataset
 
 
-def run(max_steps=64e3, mode='rgb', root='/ssd2/charades/Charades_v1_rgb', clip_batch_size=8, load_model='', save_dir=''):
+def run(max_steps=64e3, mode='rgb', root='/ssd2/charades/Charades_v1_rgb', split='charades/charades.json', clip_batch_size=8, load_model='', save_dir=''):
     # setup dataset
     test_transforms = transforms.Compose([videotransforms.CenterCrop(224)])
 
