@@ -335,4 +335,6 @@ class InceptionI3d(nn.Module):
         for end_point in self.VALID_ENDPOINTS:
             if end_point in self.end_points:
                 x = self._modules[end_point](x)
-        return self.avg_pool(x)
+        out = self.avg_pool(x)
+        out = torch.squeeze(torch.mean(out, dim=2))
+        return out
